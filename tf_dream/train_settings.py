@@ -23,15 +23,15 @@ augmentation_kwargs = {
 
 # Queue settings
 loader_queue_kwargs = {
-    'read_threads': 16,
-    'capacity': 128,
+    'read_threads': 4,
+    'capacity': 64,
     'key_dict_json_file':
         os.path.join(TRAIN_DATA_DIR[0], 'key_dict.json')}
 
-shuffle_queue_kwargs = {'capacity': 128, 'min_after_dequeue': 40}
+shuffle_queue_kwargs = {'capacity': 128, 'min_after_dequeue':40}
 queue_builder_kwargs = {
     'max_size': 256,
-    'read_threads': 16,
+    'read_threads': 24,
     'scale': 65535,
     'loader_queue_kwargs': loader_queue_kwargs,
     'shuffle_queue_kwargs': shuffle_queue_kwargs,
@@ -45,9 +45,9 @@ queue_builder_kwargs = {
     'additional_feature_keys': []}
 
 # Train settings
-train_kwargs = {'n_epochs': 5,
+train_kwargs = {'n_epochs': 1,
                 'samples_per_epoch': {'train': 1713, 'val': 60},
-                'batch_size': 4}
+                'batch_size': 8}
 optimizer_kwargs = {'learning_rate': 1e-8}
 ema_kwargs = {'decay': 0.999, 'eval_with_ema': False}
 
@@ -118,5 +118,5 @@ settings = {
     'ema_kwargs': ema_kwargs,
     'callbacks': callbacks,
     'metrics': ['accuracy'],
-    'num_gpus': 4}
+    'num_gpus': 1}
 
