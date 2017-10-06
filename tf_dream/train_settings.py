@@ -53,8 +53,8 @@ ema_kwargs = {'decay': 0.999, 'eval_with_ema': False}
 
 # Model settings
 model_kwargs = {'classes': [5, 4], 'reduce': 0.5,
-                'batch_norm_kwargs': {'momentum': 0.99, 'axis': 1
-                                      },
+                'batch_norm_kwargs': {'momentum': 0.99, 'axis': 1,
+                                       'fused': True },
                 'train_top_only': False}
     # 'output_names': zip(*queue_builder_kwargs['output_mask_keys'])}
 
@@ -118,5 +118,5 @@ settings = {
     'ema_kwargs': ema_kwargs,
     'callbacks': callbacks,
     'metrics': ['accuracy'],
-    'num_gpus': 1}
+    'num_gpus': 4}
 

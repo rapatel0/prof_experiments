@@ -1,1 +1,1 @@
-dgxJob.py . ls -d /raid/galvin/Dataset3:/data -d /home/rp/gktemo/fast_galvin/Dream_e2e_1:/src/Dream -d /nfs_mount/:/nfs_mount
+dgxJob.py . ls -d /raid/ravi/anatomy-june_png_tabar_strat:/data/anatomy-june_png_tabar_strat -d /nfs_mount/:/nfs_mount

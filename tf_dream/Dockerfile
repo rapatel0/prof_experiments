@@ -6,7 +6,7 @@
 #FROM kheiron/joe_ref
 #FROM kheiron/intel_mkl:0.4.11
 #FROM 10.58.124.244:35000/intel_mkl:0.4.11
-FROM 10.58.124.244:35000/tfxla_cv_mkl_kusr:test
+FROM 10.58.124.244:35000/kheiron_intel_mkl_1_3 
 
 
 #----------------------------------------------
@@ -66,8 +66,6 @@ RUN 	eval `ssh-agent` && ssh-add /home/keras/.ssh/id_rsa &&\
 	cd .. 					&& \
 	pip install --user -e online_preproc
 
-WORKDIR /src/
-RUN git clone git@github.com:Kheiron-Medical/kheiron_runners.git
 WORKDIR /src/kheiron_runners
 RUN     eval `ssh-agent` && ssh-add /home/keras/.ssh/id_rsa && \
 	git fetch 				&& \ 
@@ -83,5 +81,6 @@ COPY train_settings.py /src/kheiron_runners/settings/train_settings.py
 
 ENV NUM_GPUS=4
 
+WORKDIR /run_context
 
-ENTRYPOINT bash
+ENTRYPOINT ./entrypoint.sh
