@@ -11,3 +11,5 @@
 ./tf_hf_dream_dd//Dream_e2e_1/results/
 ./vanilla_galvin//Dream_e2e_1/results/
 ./v_galvin//Dream_e2e_1/results/
+*.h5
+*.npz
