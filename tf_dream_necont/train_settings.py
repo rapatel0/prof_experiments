@@ -45,7 +45,7 @@ queue_builder_kwargs = {
     'additional_feature_keys': []}
 
 # Train settings
-train_kwargs = {'n_epochs': 1,
+train_kwargs = {'n_epochs': 10,
                 'samples_per_epoch': {'train': 1713, 'val': 60},
                 'batch_size': 8}
 optimizer_kwargs = {'learning_rate': 1e-8}
@@ -59,7 +59,7 @@ model_kwargs = {'classes': [5, 4], 'reduce': 0.5,
     # 'output_names': zip(*queue_builder_kwargs['output_mask_keys'])}
 
 # Monitoring settings
-CB_MONITOR = 'val_main_output_accuracy'
+CB_MONITOR = 'val_output_accuracy'
 
 callbacks = {
     'EarlyStopping': {

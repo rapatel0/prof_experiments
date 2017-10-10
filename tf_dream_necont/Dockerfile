@@ -7,7 +7,7 @@
 #FROM kheiron/intel_mkl:0.4.11
 #FROM 10.58.124.244:35000/intel_mkl:0.4.11
 #FROM 10.58.124.244:35000/kheiron_intel_mkl_1_3 
-FROM 10.58.124.244:35000/tfxla_cv_mkl_kusr
+FROM 10.58.124.244:35000/tf_cv_mkl_kusr:gb-docker-make-ceea8fc 
 
 #----------------------------------------------
 # Custom installed packages
